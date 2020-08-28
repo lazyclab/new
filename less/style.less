@@ -1,0 +1,117 @@
+@import "_null";
+
+.navbar {
+	width: 100%;
+}
+
+@media (min-width: 992px) {
+	.animate {
+		animation-duration: 0.3s;
+		-webkit-animation-duration: 0.3s;
+		animation-fill-mode: both;
+		-webkit-animation-fill-mode: both;
+	}
+}
+
+
+
+.slideIn {
+	animation-name: slideIn;
+}
+
+.main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	&__img {
+		width: 200px;
+		height: 300px;
+
+
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
+.parent {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+
+
+}
+
+.itmes {
+	flex: 1 1 25%;
+	margin: 10px;
+	width: 80px;
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.class {
+
+	&__1 {
+		background: #000;
+	}
+
+	&__2 {
+		background: rgb(206, 123, 123);
+	}
+
+	&__5 {
+		background: rgb(51, 22, 22);
+	}
+
+	&__3 {
+		background: rgb(73, 224, 154);
+	}
+
+	&__6 {
+		background: rgb(73, 76, 224);
+	}
+
+	&__4 {
+		background: rgb(223, 226, 39);
+	}
+
+	&__7 {
+		background: rgb(73, 181, 224);
+	}
+
+	&__9 {
+		background: rgb(143, 73, 224);
+	}
+
+
+	&__8 {
+		background: rgb(199, 73, 224);
+	}
+}
+
+
+@keyframes slideIn {
+	0% {
+		transform: translateY(1rem);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0rem);
+		opacity: 1;
+	}
+
+	0% {
+		transform: translateY(1rem);
+		opacity: 0;
+	}
+}
