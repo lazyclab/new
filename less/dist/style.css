@@ -72,89 +72,83 @@ h6 {
   font-weight: inherit;
 }
 /*# sourceMappingURL=null.css.map */
-.navbar {
-  width: 100%;
-}
-@media (min-width: 992px) {
-  .animate {
-    animation-duration: 0.3s;
-    -webkit-animation-duration: 0.3s;
-    animation-fill-mode: both;
-    -webkit-animation-fill-mode: both;
-  }
-}
-.slideIn {
-  animation-name: slideIn;
-}
-.main {
+body {
+  background: #E5E5E5;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
-.main__img {
-  width: 200px;
-  height: 300px;
+.wraper {
+  background: #FFFFFF;
+  border-radius: 3px;
 }
-.main__img img {
-  max-width: 100%;
-}
-.parent {
+.container__column-1 {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  padding-top: 17px;
 }
-.itmes {
-  flex: 1 1 25%;
-  margin: 10px;
-  width: 80px;
-  height: 80px;
+.column-1__title {
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height */
+  color: #000000;
+}
+.column-1__button {
+  background: white;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  line-height: 21px;
+  text-align: right;
+  color: #888888;
+}
+.row {
+  flex-wrap: nowrap;
+}
+.rows {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
+  padding-top: 16px;
+  padding-bottom: 16px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  color: white;
-  font-size: 20px;
-  font-weight: 700;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
-.class__1 {
-  background: #000;
+.active {
+  display: none;
 }
-.class__2 {
-  background: #ce7b7b;
+.rows-1 {
+  padding: 0 16px 0 44px;
 }
-.class__5 {
-  background: #331616;
+.rows-1__span input {
+  margin-right: 4px;
 }
-.class__3 {
-  background: #49e09a;
+.rows-2 {
+  padding-right: 103px;
 }
-.class__6 {
-  background: #494ce0;
+.rows-2__span input {
+  margin-right: 4px;
 }
-.class__4 {
-  background: #dfe227;
+.rows-3 {
+  padding-right: 24px;
 }
-.class__7 {
-  background: #49b5e0;
+.rows-3__span input {
+  margin-right: 4px;
 }
-.class__9 {
-  background: #8f49e0;
+.rows-4 {
+  padding-right: 45px;
 }
-.class__8 {
-  background: #c749e0;
+.rows-4__span input {
+  margin-right: 4px;
 }
-@keyframes slideIn {
-  0% {
-    transform: translateY(1rem);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0rem);
-    opacity: 1;
-  }
-  0% {
-    transform: translateY(1rem);
-    opacity: 0;
-  }
+.rows-5 {
+  padding-right: 110px;
+}
+.rows-5__span input {
+  margin-right: 4px;
 }

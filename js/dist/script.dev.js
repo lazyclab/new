@@ -1,18 +1,28 @@
 "use strict";
 
-$(document).ready(function () {
-  var items = $('.itmes');
-  var mas = [];
-  var atr;
+var mySpan1 = $("#rows-1__span");
+var mySpan2 = $("#rows-2__span");
+var mySpan3 = $("#rows-3__span");
+var mySpan4 = $("#rows-4__span");
+var mySpan5 = $("#rows-5__span");
+var checkbox = $('input');
+var promise = $.ajax({
+  url: "https://reqres.in/api/unknown?per_page=12",
+  test: 1
+}).then(function (reslut) {
+  var resultData = reslut.data;
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
 
   try {
-    for (var _iterator = items[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    for (var _iterator = resultData[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       item = _step.value;
-      atr = $(item).attr("data-id");
-      mas.push(+atr);
+      $(mySpan1).append("<li  class = 'rows rows-1__div'>".concat(item.id, "</li>"));
+      $(mySpan2).append("<li  class = 'rows rows-2__div'>".concat(item.name, "</li>"));
+      $(mySpan3).append("<li  class = 'rows rows-3__div'>".concat(item.year, "</li>"));
+      $(mySpan4).append("<li  class = 'rows rows-4__div'>".concat(item.color, "</li>"));
+      $(mySpan5).append("<li  class = 'rows rows-5__div'>".concat(item.pantone_value, "</li>"));
     }
   } catch (err) {
     _didIteratorError = true;
@@ -29,25 +39,19 @@ $(document).ready(function () {
     }
   }
 
-  mas.sort(function (a, b) {
-    return b - a;
-  });
-  console.log(mas);
-  var contentA;
-  var contentB;
   var _iteratorNormalCompletion2 = true;
   var _didIteratorError2 = false;
   var _iteratorError2 = undefined;
 
   try {
-    for (var _iterator2 = items[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-      item = _step2.value;
-      var result = $('.itmes').sort(function (a, b) {
-        contentA = parseInt($(a).data('id'));
-        contentB = parseInt($(b).data('id'));
-        return contentA > contentB ? -1 : contentA > contentB ? 1 : 0;
+    for (var _iterator2 = checkbox[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+      list = _step2.value;
+      console.log(list);
+      $(list).on('click', function (e) {
+        if (list.checked) {
+          $(mySpan1).toggleClass('active');
+        } else return false;
       });
-      $('#mylist').html(result);
     }
   } catch (err) {
     _didIteratorError2 = true;
@@ -63,4 +67,6 @@ $(document).ready(function () {
       }
     }
   }
+})["catch"](function (err) {
+  console.log("error", err);
 });
